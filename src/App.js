@@ -1,26 +1,18 @@
 import { useState } from "react";
 
 function App() {
-    // khai báo biến state và hàm setter cho nó
-    // useState: hàm khởi tạo, chỉ chạy 1 lần duy nhất
-    const [counter, setCounter] = useState(1);
+    const [name, setName] = useState();
 
-    const handleIncrease = () => {
-        // setter của tk nào thì set value cho tk đó
-        // truyền vào cái gì thì = new value
-        // setCounter(counter + 1);
-
-        // sử dụng call back
-        setCounter((preState) => preState + 1);
-        setCounter((preState) => preState + 1);
-    };
-
+    console.log(name);
+    //onchange ở đây biểu hiện là chiều bình thường, nghĩa là đổi view -> đổi controller
+    // value ở đây là chiều thứ 2: đổi ở controller -> đổi ở view
     return (
-        <div className="App" style={{ padding: "20px" }}>
-            {/* không cần this, display trực tiếp state */}
-            <h1>{counter}</h1>
-            {/* không cần arrow function, gọi trực tiếp hàm */}
-            <button onClick={handleIncrease}>Increase</button>
+        <div style={{ padding: "20px" }}>
+            <input
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+            ></input>
+            <button onClick={(e) => setName("jack")}>jack</button>
         </div>
     );
 }
