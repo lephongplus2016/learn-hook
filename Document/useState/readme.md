@@ -1,3 +1,14 @@
+# useState
+
+## Lý thuyết
+
+-   Chú ý hàm setState sau khi chạy xong, sẽ chạy lại toàn app => cập nhật giá trị state.
+-   Tuy nhiên, nếu gọi setState liên tục nhiều lần thì nó vẫn chỉ cập nhật state 1 lần. Lý do là bởi nó lập lịch để re-render lại.
+-   Từ khóa `preState` callback sẽ cập nhật ngay lập tức state, ko bị chờ như ở trên.
+
+## Code
+
+```js
 import { useState } from "react";
 
 function App() {
@@ -26,3 +37,4 @@ function App() {
 }
 
 export default App;
+```
