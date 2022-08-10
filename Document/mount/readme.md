@@ -1,3 +1,6 @@
+# Mount - unmount
+
+```js
 import { useState } from "react";
 
 import Content from "./Content";
@@ -23,3 +26,4 @@ function App() {
 }
 
 export default App;
+```
